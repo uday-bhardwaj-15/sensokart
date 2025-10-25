@@ -58,14 +58,13 @@ export async function POST(request: NextRequest) {
       subCategory: subCategory ? { _type: 'reference', _ref: subCategory } : null,
       brand: { _type: 'reference', _ref: brand },
       price,
-      images,
+      images, // images should be [{_type:'image', asset:{_type:'reference', _ref:'image-...'}}]
       specifications,
       features,
       isActive,
       _createdAt: new Date().toISOString(),
       _updatedAt: new Date().toISOString()
     }
-
     const result = await serverClient.create(product)
     return NextResponse.json(result)
   } catch (error) {
