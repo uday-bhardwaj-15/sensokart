@@ -4,7 +4,7 @@ import { serverClient } from '@/lib/mainclient'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, phone, company, product, productName, quantity, message } = body
+    const { name, email, phone, company, product, country,productName, quantity, message } = body
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -24,6 +24,7 @@ export async function POST(request: NextRequest) {
       productName: productName || '',
       quantity: quantity || 1,
       message,
+      country,
       status: 'new',
       createdAt: new Date().toISOString(),
     })

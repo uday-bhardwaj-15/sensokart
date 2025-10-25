@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Search, Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -23,13 +24,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-green-600">SENSOKART</h1>
-                <p className="text-xs text-gray-500">Meas 1 buonti mocort Lugu seoran</p>
-              </div>
+              <Image src='/sensokart-removebg-preview.png' height={50} width={50} alt='logo'/>
             </Link>
           </div>
 
