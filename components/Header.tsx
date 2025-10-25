@@ -24,7 +24,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <Image src='/sensokart-removebg-preview.png' height={50} width={50} alt='logo'/>
+              <Image src='/sensokart-cropped.png' height={100} width={150} alt='logo'/>
             </Link>
           </div>
 
