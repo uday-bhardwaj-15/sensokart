@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sensokart Ecommerce Platform
+
+A modern ecommerce platform for Sensokart.com built with Next.js, React, and Sanity CMS.
+
+## Features
+
+### User Features
+- Product search and filtering
+- Product enquiry system with WhatsApp and Email integration
+- Social media sharing
+- Contact form
+- Responsive design
+
+### Admin Features
+- Content management via Sanity Studio
+- Product management (categories, brands, products)
+- Enquiry management
+- Contact form submissions
+- Page content management
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, React, TypeScript
+- **Styling**: Tailwind CSS
+- **CMS**: Sanity
+- **Icons**: Lucide React
+- **Deployment**: Vercel (recommended)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+- Sanity account
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd senokart
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+Create a `.env.local` file in the root directory:
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id_here
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_TOKEN=your_read_write_token_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Set up Sanity:
+```bash
+npm install -g @sanity/cli
+sanity init
+```
 
-## Learn More
+5. Run the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+6. Access the admin panel:
+Visit `http://localhost:3000/studio` to access the Sanity Studio for content management.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+├── app/                    # Next.js app directory
+│   ├── api/                # API routes
+│   ├── studio/             # Sanity Studio
+│   ├── about/              # About page
+│   ├── contact/            # Contact page
+│   ├── careers/            # Careers page
+│   ├── products/           # Products page
+│   ├── privacy/            # Privacy policy
+│   ├── terms/              # Terms & conditions
+│   └── refund/             # Refund policy
+├── components/            # React components
+├── lib/                     # Utility functions
+├── sanity/                  # Sanity schemas
+└── public/                  # Static assets
+```
 
-## Deploy on Vercel
+## Content Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Sanity Studio
+Access the admin panel at `/studio` to manage:
+- Products and categories
+- Brands
+- Homepage content
+- Product enquiries
+- Contact form submissions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Content Types
+- **Products**: Product information, specifications, images
+- **Categories**: Product categories and subcategories
+- **Brands**: Brand information and logos
+- **Enquiries**: Product enquiry submissions
+- **Contact**: Contact form submissions
+- **Pages**: Static page content
+
+## API Endpoints
+
+- `POST /api/enquiry` - Submit product enquiry
+- `POST /api/contact` - Submit contact form
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy
+
+### Environment Variables
+
+- `NEXT_PUBLIC_SANITY_PROJECT_ID`: Your Sanity project ID
+- `NEXT_PUBLIC_SANITY_DATASET`: Your Sanity dataset (usually 'production')
+- `SANITY_API_TOKEN`: Your Sanity read/write API token (get from Sanity Dashboard → API → Tokens)
+
+## Contact Information
+
+- **Phone**: 9494122101
+- **Email**: sales@sensokart.com
+- **Website**: sensokart.com
+
+## License
+
+This project is proprietary software for Sensokart.com
